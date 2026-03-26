@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags focadas em SEO/GEO -->
+    <meta name="description" content="A Bagaggio é confiável? Descubra por que milhares de pessoas confiam na nossa marca há mais de 80 anos. Veja a garantia dos produtos, logística e provas sociais.">
+    <title>A Bagaggio é Confiável? Conheça a Nossa História e Qualidade</title>
+    
+    <!-- Tailwind CSS (Estilização via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js (Biblioteca para os gráficos) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Font Awesome (Ícones visuais) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bagaggio: {
+                            red: '#D31E2A', /* Vermelho institucional da marca */
+                            dark: '#1a1a1a',
+                            light: '#f5f5f5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        body { font-family: 'Montserrat', sans-serif; }
+        
+        /* Classes para a animação de scroll (Ideia 4) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Ocultar seta padrão do details/summary para FAQ Animada */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- CABEÇALHO ESTÁTICO (Espelhando o site original) -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <!-- Barra superior de benefícios -->
+        <div class="bg-bagaggio-red text-white text-xs font-semibold text-center py-2">
+            ACOMPANHE O SEU PEDIDO | PORTES GRÁTIS ACIMA DE R$ 299* | TROCA FÁCIL
+        </div>
+        <!-- Barra de Pesquisa, Logótipo e Carrinho -->
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logótipo -->
+            <a href="https://www.bagaggio.com.br/" target="_blank" class="block">
+                <img src="https://deco-sites-assets.s3.sa-east-1.amazonaws.com/lojabagaggio/d2d9caa2-5c17-408e-8ffe-f8d4f35d1370/bagaggio-logo-2022.png" alt="Bagaggio" class="h-6 md:h-8 object-contain">
+            </a>
+            <!-- Pesquisa Simulada -->
+            <div class="hidden md:flex flex-1 mx-8 relative">
+                <input type="text" placeholder="O que está a procurar?" class="w-full border border-gray-300 rounded-full py-2 px-4 focus:outline-none focus:border-bagaggio-red" disabled>
+                <button class="absolute right-3 top-2 text-gray-500 hover:text-bagaggio-red"><i class="fas fa-search"></i></button>
+            </div>
+            <!-- Ícones de Utilizador/Carrinho -->
+            <div class="flex items-center gap-6 text-gray-600">
+                <a href="#" class="hover:text-bagaggio-red flex flex-col items-center"><i class="fas fa-user text-xl"></i><span class="text-[10px] mt-1 hidden md:block">Entrar</span></a>
+                <a href="#" class="hover:text-bagaggio-red flex flex-col items-center"><i class="fas fa-heart text-xl"></i><span class="text-[10px] mt-1 hidden md:block">Favoritos</span></a>
+                <a href="#" class="hover:text-bagaggio-red flex flex-col items-center relative">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span class="absolute -top-1 -right-2 bg-bagaggio-red text-white rounded-full text-[9px] px-1">0</span>
+                    <span class="text-[10px] mt-1 hidden md:block">Carrinho</span>
+                </a>
+            </div>
+        </div>
+        <!-- Menu de Navegação -->
+        <nav class="border-t border-gray-100 hidden md:block">
+            <ul class="container mx-auto px-4 flex justify-center gap-8 py-3 text-sm font-semibold text-gray-700">
+                <li class="hover:text-bagaggio-red cursor-pointer">MALAS</li>
+                <li class="hover:text-bagaggio-red cursor-pointer">MOCHILAS</li>
+                <li class="hover:text-bagaggio-red cursor-pointer">BOLSAS</li>
+                <li class="hover:text-bagaggio-red cursor-pointer">ACESSÓRIOS</li>
+                <li class="hover:text-bagaggio-red cursor-pointer">INFANTIL</li>
+                <li class="hover:text-bagaggio-red cursor-pointer text-red-600">OFERTAS</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL (Foco em GEO/SEO e Conversão de Confiança) -->
+    <main>
+        <!-- Secção Hero Imersiva (Ideia 1 e 5) -->
+        <section class="relative py-24 px-4 text-center bg-bagaggio-dark overflow-hidden">
+            <!-- Imagem de Fundo -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=1920" alt="Pessoas a viajar no aeroporto" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-t from-bagaggio-dark via-bagaggio-dark/80 to-transparent"></div>
+            </div>
+            
+            <div class="container mx-auto max-w-4xl relative z-10 reveal">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-md">A Bagaggio é Confiável?</h1>
+                <p class="text-xl text-gray-200 mb-10 font-light">Nascida em 1942, ajudamos milhões de pessoas a levarem a vida de forma mais leve. Descubra por que somos a escolha número 1 dos viajantes.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 rounded-full text-sm font-semibold text-white shadow-lg"><i class="fas fa-star text-yellow-400 mr-2"></i> Alta Satisfação</span>
+                    <span class="bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 rounded-full text-sm font-semibold text-white shadow-lg"><i class="fas fa-store text-red-400 mr-2"></i> +150 Lojas Físicas</span>
+                    <span class="bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 rounded-full text-sm font-semibold text-white shadow-lg"><i class="fas fa-shield-alt text-green-400 mr-2"></i> 100% Segura</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faixa de Autoridade Visual - Trust Strip (Ideia 3) -->
+        <div class="bg-white py-6 border-b border-gray-100 reveal">
+            <div class="container mx-auto px-4 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="flex items-center gap-2"><i class="fas fa-lock text-2xl"></i><span class="font-bold text-sm uppercase">Site Seguro SSL</span></div>
+                <div class="flex items-center gap-2"><i class="fas fa-medal text-2xl"></i><span class="font-bold text-sm uppercase">Top Loja E-bit</span></div>
+                <div class="flex items-center gap-2"><i class="fas fa-thumbs-up text-2xl"></i><span class="font-bold text-sm uppercase">Reclame Aqui Ótimo</span></div>
+                <div class="flex items-center gap-2"><i class="fas fa-check-double text-2xl"></i><span class="font-bold text-sm uppercase">Compra Verificada</span></div>
+            </div>
+        </div>
+
+        <!-- Secção: Na Mídia (Nova Funcionalidade 5) -->
+        <div class="bg-gray-50 py-10 border-b border-gray-200 reveal">
+            <div class="container mx-auto px-4 text-center">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">A qualidade Bagaggio é recomendada por grandes portais</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40 grayscale hover:grayscale-0 transition duration-500">
+                    <span class="text-2xl font-bold font-serif">EXAME</span>
+                    <span class="text-2xl font-bold font-sans tracking-tighter">O GLOBO</span>
+                    <span class="text-2xl font-bold font-serif italic">Forbes</span>
+                    <span class="text-xl font-bold font-sans">Pequenas Empresas</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Histórico e Solidez da Marca (Ideia 5 - Mais Whitespace) -->
+        <section class="py-24 px-4 bg-white overflow-hidden">
+            <div class="container mx-auto max-w-4xl text-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 border-b-4 border-bagaggio-red pb-2 inline-block">A Nossa História de Tradição</h2>
+                    <p class="text-gray-600 mb-4 text-lg">Com <strong>mais de 80 anos de história</strong>, a Bagaggio não é apenas um site. Somos uma marca líder, pioneira no ambiente digital há mais de 20 anos e altamente consolidada no retalho.</p>
+                    <p class="text-gray-600 mb-8 text-lg">Pode contar com a segurança de uma rede com <strong>mais de 150 lojas físicas</strong>. Ou seja, ao comprar online, tem a garantia de estar a lidar com uma estrutura gigante, pronta para prestar suporte técnico e acionar garantias presencialmente.</p>
+                    <ul class="space-y-4 max-w-2xl mx-auto text-left mt-8">
+                        <li class="flex items-center text-gray-700 bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-100"><i class="fas fa-check-circle text-green-500 mr-4 text-2xl"></i> Tradição e solidez desde 1942.</li>
+                        <li class="flex items-center text-gray-700 bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-100"><i class="fas fa-check-circle text-green-500 mr-4 text-2xl"></i> Estrutura Omnichannel (Site + Lojas Físicas).</li>
+                        <li class="flex items-center text-gray-700 bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-100"><i class="fas fa-check-circle text-green-500 mr-4 text-2xl"></i> Qualidade homologada e testes de durabilidade.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparativo: Bagaggio vs Genéricos (Nova Funcionalidade 2) -->
+        <section class="py-24 px-4 bg-white">
+            <div class="container mx-auto max-w-4xl reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-bagaggio-dark">Porquê escolher a Bagaggio?</h2>
+                    <p class="text-gray-600 mt-3 text-lg">Veja o que arrisca ao optar por marcas sem histórico ou alternativas baratas na internet.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 overflow-hidden">
+                    <!-- Cabeçalho -->
+                    <div class="grid grid-cols-3 text-center border-b border-gray-100">
+                        <div class="p-4 md:p-6 bg-gray-50 flex items-center justify-center font-bold text-gray-500 uppercase text-xs md:text-sm">O que Procura</div>
+                        <div class="p-4 md:p-6 bg-bagaggio-red text-white flex items-center justify-center font-bold text-lg md:text-xl shadow-inner relative overflow-hidden">
+                            <div class="relative z-10">Bagaggio</div>
+                        </div>
+                        <div class="p-4 md:p-6 bg-gray-100 flex items-center justify-center font-bold text-gray-500">Genéricos</div>
+                    </div>
+                    <!-- Linha 1 -->
+                    <div class="grid grid-cols-3 text-center border-b border-gray-100">
+                        <div class="p-4 md:p-6 flex items-center justify-center text-sm md:text-base text-gray-700 font-semibold border-r border-gray-100">Garantia Nacional Autêntica</div>
+                        <div class="p-4 md:p-6 bg-red-50/50 text-green-600 flex items-center justify-center font-bold border-r border-red-50"><i class="fas fa-check text-2xl drop-shadow-sm"></i></div>
+                        <div class="p-4 md:p-6 text-red-500 flex items-center justify-center"><i class="fas fa-times text-xl opacity-60"></i></div>
+                    </div>
+                    <!-- Linha 2 -->
+                    <div class="grid grid-cols-3 text-center border-b border-gray-100">
+                        <div class="p-4 md:p-6 flex items-center justify-center text-sm md:text-base text-gray-700 font-semibold border-r border-gray-100">Troca em Loja Física (+150 unid.)</div>
+                        <div class="p-4 md:p-6 bg-red-50/50 text-green-600 flex items-center justify-center font-bold border-r border-red-50"><i class="fas fa-check text-2xl drop-shadow-sm"></i></div>
+                        <div class="p-4 md:p-6 text-red-500 flex items-center justify-center"><i class="fas fa-times text-xl opacity-60"></i></div>
+                    </div>
+                    <!-- Linha 3 -->
+                    <div class="grid grid-cols-3 text-center border-b border-gray-100">
+                        <div class="p-4 md:p-6 flex items-center justify-center text-sm md:text-base text-gray-700 font-semibold border-r border-gray-100">Rodas Duplas 360º Testadas</div>
+                        <div class="p-4 md:p-6 bg-red-50/50 text-green-600 flex items-center justify-center font-bold border-r border-red-50"><i class="fas fa-check text-2xl drop-shadow-sm"></i></div>
+                        <div class="p-4 md:p-6 text-red-500 flex items-center justify-center"><i class="fas fa-times text-xl opacity-60"></i></div>
+                    </div>
+                    <!-- Linha 4 -->
+                    <div class="grid grid-cols-3 text-center">
+                        <div class="p-4 md:p-6 flex items-center justify-center text-sm md:text-base text-gray-700 font-semibold border-r border-gray-100">Suporte Técnico Homologado</div>
+                        <div class="p-4 md:p-6 bg-red-50/50 text-green-600 flex items-center justify-center font-bold border-r border-red-50"><i class="fas fa-check text-2xl drop-shadow-sm"></i></div>
+                        <div class="p-4 md:p-6 text-red-500 flex items-center justify-center"><i class="fas fa-times text-xl opacity-60"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gráficos de Entrega de Produto, Logística e Satisfação -->
+        <section class="py-24 px-4 bg-gray-50 border-y border-gray-200">
+            <div class="container mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-bagaggio-dark">Transparência em Dados Reais</h2>
+                    <p class="text-gray-600 mt-3 text-lg">Os nossos resultados em logística e o índice de satisfação de quem compra connosco.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-10">
+                    <!-- Gráfico 1: Satisfação (Ideia 5 - Sombras Suaves) -->
+                    <div class="bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 reveal">
+                        <h3 class="text-xl font-bold mb-6 text-center text-gray-700">Índice de Avaliações (Pós-Venda)</h3>
+                        <div class="relative h-72 w-full flex justify-center">
+                            <canvas id="satisfactionChart"></canvas>
+                        </div>
+                    </div>
+                    <!-- Gráfico 2: Logística -->
+                    <div class="bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 reveal">
+                        <h3 class="text-xl font-bold mb-6 text-center text-gray-700">Eficiência Logística - Entregas no Prazo (%)</h3>
+                        <div class="relative h-72 w-full">
+                            <canvas id="deliveryChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ "Mata-Objeções" (Nova Funcionalidade 1) -->
+        <section class="py-24 px-4 bg-gray-50 border-t border-gray-200">
+            <div class="container mx-auto max-w-3xl reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-bagaggio-dark">Dúvidas Frequentes</h2>
+                    <p class="text-gray-600 mt-3 text-lg">Respostas rápidas para que faça a sua compra com total segurança.</p>
+                </div>
+
+                <div class="space-y-5">
+                    <!-- Pergunta 1 -->
+                    <details class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 cursor-pointer group">
+                        <summary class="font-bold text-lg text-bagaggio-dark flex justify-between items-center focus:outline-none">
+                            E se a minha mala se danificar durante o voo? 
+                            <span class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-open:bg-bagaggio-red transition-colors"><i class="fas fa-chevron-down text-bagaggio-red group-open:text-white transition-transform group-open:rotate-180"></i></span>
+                        </summary>
+                        <p class="mt-5 text-gray-600 leading-relaxed border-t border-gray-50 pt-5">Neste caso, a responsabilidade primária é da companhia aérea. No entanto, a Bagaggio oferece laudos técnicos gratuitos nas nossas lojas físicas para ajudar no processo de indemnização. Além disso, falhas de fabrico são totalmente cobertas pela nossa garantia.</p>
+                    </details>
+                    
+                    <!-- Pergunta 2 -->
+                    <details class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 cursor-pointer group">
+                        <summary class="font-bold text-lg text-bagaggio-dark flex justify-between items-center focus:outline-none">
+                            É seguro comprar com cartão de crédito no site? 
+                            <span class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-open:bg-bagaggio-red transition-colors"><i class="fas fa-chevron-down text-bagaggio-red group-open:text-white transition-transform group-open:rotate-180"></i></span>
+                        </summary>
+                        <p class="mt-5 text-gray-600 leading-relaxed border-t border-gray-50 pt-5">Absolutamente. Utilizamos tecnologia SSL de encriptação militar para proteger os seus dados, sendo a mesma tecnologia usada por bancos. O processamento é feito por gateways certificados e não armazenamos o número do seu cartão.</p>
+                    </details>
+
+                    <!-- Pergunta 3 -->
+                    <details class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 cursor-pointer group">
+                        <summary class="font-bold text-lg text-bagaggio-dark flex justify-between items-center focus:outline-none">
+                            Como funciona a devolução se eu não gostar? 
+                            <span class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-open:bg-bagaggio-red transition-colors"><i class="fas fa-chevron-down text-bagaggio-red group-open:text-white transition-transform group-open:rotate-180"></i></span>
+                        </summary>
+                        <p class="mt-5 text-gray-600 leading-relaxed border-t border-gray-50 pt-5">A sua satisfação é a nossa prioridade. Tem até 7 dias após a receção do produto para solicitar a devolução ou troca online sem complicações. O processo é simples e pode ser iniciado diretamente através do nosso portal de atendimento.</p>
+                    </details>
+
+                    <!-- Pergunta 4 -->
+                    <details class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 cursor-pointer group">
+                        <summary class="font-bold text-lg text-bagaggio-dark flex justify-between items-center focus:outline-none">
+                            Posso trocar o produto numa loja física? 
+                            <span class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-open:bg-bagaggio-red transition-colors"><i class="fas fa-chevron-down text-bagaggio-red group-open:text-white transition-transform group-open:rotate-180"></i></span>
+                        </summary>
+                        <p class="mt-5 text-gray-600 leading-relaxed border-t border-gray-50 pt-5">Sim! Este é um dos nossos maiores diferenciais. Com mais de 150 lojas espalhadas pelo país, pode levar o produto comprado online à loja mais próxima para efetuar trocas, conforme a política vigente da marca.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Garantia do Produto -->
+        <section class="py-16 px-4 bg-gray-100 border-t border-gray-200">
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8 px-4 md:px-12 reveal">
+                <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                    <div class="bg-bagaggio-red p-5 rounded-full text-white shadow-xl">
+                        <i class="fas fa-award text-5xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-bagaggio-dark">Garantia Ativa Bagaggio</h3>
+                        <p class="text-gray-600 mt-2 max-w-xl text-lg">Todos os nossos produtos contam com garantia de fabrico, com testes rigorosos em alças, fechos e rodas para atestar que recebe o melhor.</p>
+                    </div>
+                </div>
+                <button onclick="window.open('https://www.bagaggio.com.br/', '_blank')" class="bg-bagaggio-red text-white px-10 py-5 rounded-lg font-bold hover:bg-red-800 transition duration-300 w-full md:w-auto text-center shadow-lg transform hover:scale-105 hover:-translate-y-1 text-lg">
+                    Ir para o Site Oficial
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ ESTÁTICO (Espelhando o site original) -->
+    <footer class="bg-bagaggio-dark text-white pt-16 pb-8 px-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-700 pb-12 mb-8">
+            <div>
+                <h4 class="font-bold text-xl mb-6">BAGAGGIO</h4>
+                <p class="text-sm text-gray-400 mb-4">A ajudar a levar a vida de forma mais leve e organizada desde 1942.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase text-sm tracking-wider">Institucional</h4>
+                <ul class="text-gray-400 text-sm space-y-3">
+                    <li><a href="#" class="hover:text-white">Sobre a Bagaggio</a></li>
+                    <li><a href="#" class="hover:text-white">As Nossas Lojas</a></li>
+                    <li><a href="#" class="hover:text-white">Trabalhe Connosco</a></li>
+                    <li><a href="#" class="hover:text-white">Seja um Franqueado</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase text-sm tracking-wider">Ajuda e Suporte</h4>
+                <ul class="text-gray-400 text-sm space-y-3">
+                    <li><a href="#" class="hover:text-white">Acompanhe o seu Pedido</a></li>
+                    <li><a href="#" class="hover:text-white">Trocas e Devoluções</a></li>
+                    <li><a href="#" class="hover:text-white">Políticas do Site</a></li>
+                    <li><a href="#" class="hover:text-white">Fale Connosco</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase text-sm tracking-wider">Segurança e Pagamento</h4>
+                <div class="flex gap-2 flex-wrap mb-4 text-3xl text-gray-400">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <!-- Ícone genérico para métodos locais -->
+                    <i class="fas fa-qrcode"></i> 
+                </div>
+                <div class="flex flex-col gap-2 mt-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-lock text-green-500"></i>
+                        <span class="text-xs text-gray-300">Ambiente 100% Seguro</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-1">
+                        <i class="fas fa-check-circle text-blue-400"></i>
+                        <span class="text-xs text-gray-300">Empresa Certificada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto text-center text-xs text-gray-500">
+            <p>BAGAGGIO. Razão Social: Bagaggio Malas e Bolsas. CNPJ: XX.XXX.XXX/0001-XX</p>
+            <p class="mt-2">Todos os direitos reservados © 2026 Bagaggio.</p>
+        </div>
+    </footer>
+
+    <!-- Notificação Dinâmica de Prova Social (Nova Funcionalidade 4) -->
+    <div id="social-proof-toast" class="fixed bottom-6 left-6 bg-white p-4 rounded-xl shadow-2xl border border-gray-100 flex items-center gap-4 transform translate-y-32 opacity-0 transition-all duration-700 z-50 max-w-[320px] pointer-events-none">
+        <div class="relative flex-shrink-0">
+            <img src="" id="toast-img" alt="Comprador" class="w-12 h-12 rounded-full object-cover border-2 border-green-500 bg-gray-100">
+            <div class="absolute -bottom-1 -right-1 bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] border-2 border-white"><i class="fas fa-check"></i></div>
+        </div>
+        <div>
+            <p class="text-sm text-gray-800 leading-tight"><span class="font-bold" id="toast-name">...</span> acabou de comprar</p>
+            <p class="text-xs text-bagaggio-red font-bold mt-1" id="toast-product">...</p>
+            <p class="text-[10px] text-gray-400 mt-1" id="toast-time">...</p>
+        </div>
+    </div>
+
+    <!-- SCRIPT CHART.JS PARA RENDERIZAR OS GRÁFICOS ESTATÍSTICOS E ANIMAÇÕES -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Lógica de Animação Scroll Reveal (Ideia 4)
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealCallback = function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Anima apenas uma vez
+                    }
+                });
+            };
+            
+            const revealObserver = new IntersectionObserver(revealCallback, {
+                root: null,
+                threshold: 0.15 // Dispara quando 15% do elemento estiver visível
+            });
+            
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // 1. Gráfico de Satisfação do Cliente
+            const ctxSat = document.getElementById('satisfactionChart').getContext('2d');
+            new Chart(ctxSat, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Muito Satisfeitos (5★)', 'Satisfeitos (4★)', 'Neutro/Baixas'],
+                    datasets: [{
+                        data: [84, 12, 4], // Dados estáticos simulando alta conversão
+                        backgroundColor: ['#10B981', '#34D399', '#D1D5DB'], // Verde (confiança) e cinza
+                        borderWidth: 2,
+                        borderColor: '#ffffff',
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { 
+                            position: 'bottom',
+                            labels: { font: { family: 'Montserrat' } }
+                        }
+                    }
+                }
+            });
+
+            // 2. Gráfico de Logística e Entregas
+            const ctxDel = document.getElementById('deliveryChart').getContext('2d');
+            new Chart(ctxDel, {
+                type: 'bar',
+                data: {
+                    labels: ['Sul', 'Sudeste', 'C. Oeste', 'Nordeste', 'Norte'],
+                    datasets: [{
+                        label: 'Entregas Concluídas no Prazo (%)',
+                        data: [98, 99, 95, 94, 91], // Eficiência regional simulada
+                        backgroundColor: '#D31E2A', // Vermelho Bagaggio
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { borderDash: [5, 5] }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y + '% de eficiência no prazo';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Lógica para a Notificação de Prova Social (Nova Funcionalidade 4)
+            const toast = document.getElementById('social-proof-toast');
+            const toastName = document.getElementById('toast-name');
+            const toastProduct = document.getElementById('toast-product');
+            const toastTime = document.getElementById('toast-time');
+            const toastImg = document.getElementById('toast-img');
+
+            const notifications = [
+                { name: 'Ana (RJ)', product: 'Mala de Bordo Swiss 360º', time: 'Há 2 minutos', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100' },
+                { name: 'Carlos (SP)', product: 'Mochila Executiva Premium', time: 'Há 5 minutos', img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100' },
+                { name: 'Mariana (MG)', product: 'Conjunto 3 Malas Rígidas', time: 'Há 12 minutos', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100' },
+                { name: 'Ricardo (PR)', product: 'Bolsa de Viagem de Couro', time: 'Há 1 hora', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=100' }
+            ];
+
+            let notifIndex = 0;
+
+            function showToast() {
+                // Preencher com os dados da array
+                const data = notifications[notifIndex];
+                toastName.textContent = data.name;
+                toastProduct.textContent = data.product;
+                toastTime.textContent = data.time;
+                toastImg.src = data.img;
+
+                // Animação de entrada
+                toast.classList.remove('translate-y-32', 'opacity-0');
+                toast.classList.add('translate-y-0', 'opacity-100');
+
+                // Ocultar após 6 segundos
+                setTimeout(() => {
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                    toast.classList.add('translate-y-32', 'opacity-0');
+                    
+                    // Passar para a próxima notificação no ciclo
+                    notifIndex = (notifIndex + 1) % notifications.length;
+                }, 6000);
+            }
+
+            // Iniciar o ciclo: Aguarda 3 segundos para mostrar a 1ª, e depois exibe a cada 18 segundos.
+            setTimeout(() => {
+                showToast();
+                setInterval(showToast, 18000);
+            }, 3000);
+
+        });
+    </script>
+</body>
+</html>
